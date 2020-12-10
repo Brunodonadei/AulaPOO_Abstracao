@@ -79,12 +79,42 @@ namespace POO_Abstracao
                         break;
 
                     case 3:
-                        Console.WriteLine("Deseja comprar como? [1] - Boleto\n[2] - Crédito\n[3] - Débito");
+                        Console.WriteLine("Deseja comprar como?\n[1] - Boleto\n[2] - Crédito\n[3] - Débito");
                         int compra = int.Parse(Console.ReadLine());
                         switch (compra)
                         {
                             case 1:
+                                Console.WriteLine("Qual o valor do produto?");
+                                int valor = int.Parse(Console.ReadLine());
+
+                                Console.WriteLine(boleto.Desconto(valor));
+
+                                Console.WriteLine("Deseja voltar para o menu? [s/n] ");
+                                resposta = Console.ReadLine();
                                 break;
+
+                            case 2:
+                                Console.WriteLine("Qual o valor do produto?");
+                                int valor2 = int.Parse(Console.ReadLine());
+
+                                Console.WriteLine("Deseja parcelar em quantas vezes?");
+                                int parcela = int.Parse(Console.ReadLine());
+
+                                credito.Pagar(valor2, parcela);
+
+                                Console.WriteLine("Deseja voltar para o menu? [s/n] ");
+                                resposta = Console.ReadLine();                             
+                                break;
+
+                            case 3:
+                                Console.WriteLine("Qual o valor do produto?");
+                                int valor1 = int.Parse(Console.ReadLine());
+
+                                debito.Pagar(valor1);
+
+                                Console.WriteLine("Deseja voltar para o menu? [s/n] ");
+                                resposta = Console.ReadLine();
+                            break;
                             default:
                                 break;
                         }

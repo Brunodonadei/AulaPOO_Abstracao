@@ -1,3 +1,4 @@
+using System;
 namespace POO_Abstracao.classes
 {
     public class Debito : Cartao
@@ -8,8 +9,9 @@ namespace POO_Abstracao.classes
             set{saldo = value;}
         }
 
-        public void Pagar(float valor){
-            
+        public void Pagar(float valor)
+        {
+            Console.WriteLine($"Você fez um pagamento de R${valor}");
         }
     }
 }

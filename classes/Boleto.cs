@@ -13,7 +13,7 @@ namespace POO_Abstracao.classes
 
         public override string Desconto(float valor)
         {
-            return "";
+            return $"Você terá R${valor*0.12} de desconto.\nO preço final com desconto é de R${valor - valor*0.12}";
         }    
     }
 }
